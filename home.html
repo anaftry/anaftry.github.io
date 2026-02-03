@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 28px 32px;
+        background: #0d1117;
+        color: #c9d1d9;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      /* REPO HEADER */
+      .repo-header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      .repo-header .owner {
+        color: #58a6ff;
+        font-weight: 500;
+      }
+
+      .repo-header .slash {
+        opacity: 0.5;
+      }
+
+      .repo-header .repo {
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin: 12px 0 8px;
+      }
+
+      p {
+        max-width: 760px;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .card {
+        border: 1px solid #30363d;
+        border-radius: 8px;
+        padding: 16px;
+        background: #0d1117;
+        transition: 0.15s;
+      }
+
+      .card:hover {
+        background: #161b22;
+        border-color: #8b949e;
+      }
+
+      .card h3 {
+        font-size: 14px;
+        margin: 0 0 6px;
+      }
+
+      .card span {
+        font-size: 12px;
+        opacity: 0.7;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-size: 12px;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- GitHub-like repo title -->
+    <div class="repo-header">
+      <span class="owner">FitriOctavianaLestari</span>
+      <span class="slash">/</span>
+      <span class="repo">TKJ-Materi</span>
+    </div>
+
+    <h1>📘 Materi Teknik Komputer & Jaringan</h1>
+    <p>
+      Repository pembelajaran Teknik Komputer dan Jaringan (TKJ) yang berisi
+      materi dasar hingga layanan server. Gunakan menu direktori di samping
+      untuk membuka setiap topik seperti struktur folder GitHub.
+    </p>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Networking</h3>
+        <span>Dasar jaringan komputer</span>
+      </div>
+      <div class="card">
+        <h3>ISC DHCP Server</h3>
+        <span>Konfigurasi IP otomatis</span>
+      </div>
+      <div class="card">
+        <h3>Bind9 (DNS Server)</h3>
+        <span>Manajemen DNS & domain</span>
+      </div>
+      <div class="card">
+        <h3>Samba Server</h3>
+        <span>File sharing Linux & Windows</span>
+      </div>
+      <div class="card">
+        <h3>Web Server</h3>
+        <span>Layanan & hosting web</span>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 • Fitri Octaviana Lestari
+    </footer>
+  </body>
+</html>
