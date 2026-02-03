@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Copy Text ala GitHub</title>
+    <style>
+      body {
+        background: #0d1117;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        padding: 40px;
+        color: #c9d1d9;
+      }
+
+      .code-container {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 800px;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        background: #21262d;
+        color: #c9d1d9;
+        border: 1px solid #30363d;
+        padding: 4px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .copy-btn:hover {
+        background: #30363d;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .penutup {
+        text-align: center;
+      }
+
+      pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DEBIAN BIND9 (DNS SERVER</h1>
+    <h2>Perintah:</h2>
+    <p>apt install bind9 dnsutils</p>
+    <p>cd /etc/bind</p>
+    <p>nano named.conf.options</p>
+    <p></p>
+    <p></p>
+
+<!--named.conf.options-->
+    <div class="code-container">
+      <div class="code-header">
+        <span>named.conf.options</span>
+        <button class="copy-btn" onclick="copyTextoptions()">Copy</button>
+      </div>
+      <pre id="named.conf.options">
+options {
+        directory "/var/cache/bind";
+        recursion yes;
+        allow-recursion { any;};
+        allow-query { any;};
+        forward only;
+        // If there is a firewall between you and nameservers you want
+        // to talk to, you may need to fix the firewall to allow multiple
+        // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+
+        // If your ISP provided one or more IP addresses for stable
+        // nameservers, you probably want to use them as forwarders.
+        // Uncomment the following block, and insert the addresses replacing
+        // the all-0's placeholder.
+
+        forwarders {
+                8.8.8.8;
+        };
+
+        //========================================================================
+        // If BIND logs error messages about the root key being expired,
+        // you will need to update your keys.  See https://www.isc.org/bind-keys
+        //========================================================================
+        dnssec-validation no;
+
+        listen-on { any; };
+        listen-on-v6 { none; };
+};
+
+  </pre>
+    </div>
+
+    <script>
+      function copyTextoptions() {
+        const text = document.getElementById("named.conf.options").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+    <br>
+    <h2>Step 2</h2>
+    <p> nano named.conf.default-zones</p>
+    <br></br>
+<!--named.conf.default-zones-->
+    <div class="code-container">
+      <div class="code-header">
+        <span>named.conf.default-zones</span>
+        <button class="copy-btn" onclick="copyTextzones()">Copy</button>
+      </div>
+      <pre id="named.conf.default-zones">
+// prime the server with knowledge of the root servers
+zone "." {
+        type hint;
+        file "/usr/share/dns/root.hints";
+};
+
+// be authoritative for the fitri.internal forward and reverse zones, and for
+// broadcast zones as per RFC 1912
+
+zone "fitri.internal" {
+        type master;
+        file "/etc/bind/db.forward";
+};
+
+zone "40.0.10.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.256";
+};
+
+zone "0.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.0";
+};
+
+zone "255.in-addr.arpa" {
+        type master;
+        file "/etc/bind/db.255";
+};
+
+
+
+  </pre
+      >
+    </div>
+
+    <script>
+      function copyTextzones() {
+        const text = document.getElementById("named.conf.default-zones").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+
+
+    <h2>Step 3</h2>
+    <p>cp db.local db.forward</p>
+    <p>cp db.127 db.256 </p>
+    <p>nano db.forward</p>
+
+
+<!--db.forward-->
+    <div class="code-container">
+      <div class="code-header">
+        <span>db.forward</span>
+        <button class="copy-btn" onclick="copyTextfw()">Copy</button>
+      </div>
+      <pre id="db.forward">
+;
+; BIND data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     fitri.internal. root.fitri.internal. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      fitri.internal.
+@       IN      A       10.0.40.238
+biodata IN      A       10.0.40.238
+
+
+
+  </pre
+      >
+    </div>
+
+    <script>
+      function copyTextfw() {
+        const text = document.getElementById("db.forward").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+    <h2>Step 4</h2>
+    <p>nano db.256</p>
+    <br></br>
+<!--db.256-->
+    <div class="code-container">
+      <div class="code-header">
+        <span>db.256</span>
+        <button class="copy-btn" onclick="copyTextrv()">Copy</button>
+      </div>
+      <pre id="db.256">
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     fitri.internal. root.fitri.internal. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      fitri.internal.
+238     IN      PTR     fitri.internal.
+238     IN      PTR     biodata.fitri.internal.
+
+      </pre>
+    </div>
+
+    <script>
+      function copyTextrv() {
+        const text = document.getElementById("db.256").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+
+    <h2>Step 5</h2>
+    <p>nano /etc/resolv.conf</p>
+<!--resolv.conf-->
+    <div class="code-container">
+      <div class="code-header">
+        <span>dhcpd.conf</span>
+        <button class="copy-btn" onclick="copyTextsv()">Copy</button>
+      </div>
+      <pre id="resolv.conf">
+nameserver 10.0.40.238
+search fitri.internal
+      </pre>
+    </div>
+
+    <script>
+      function copyTextsv() {
+        const text = document.getElementById("resolv.conf").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+
+    <h2>Perintah Restart:</h2>
+    <p>chattr +i /etc/resolv.conf</p>
+    <p>service bind9 restart</p>
+    <p>service bind9 status</p>
+    <p>nslookup fitri.internal</p>
+    <p>nslookup 10.0.40.238</p>
+    <div class="notes">
+      <h2>Notes:</h2>
+      <h3>
+        Jika bind9 sudah berjalan boleh dhcp-server boleh di test di pc-client dan pc server tetap static dan jangan lupa cek dhcp relay di mikrotik yah :) 
+      </h3>
+    </div>
+    <div class="penutup">
+      <p></p>
+      <p>By Mlnoxid</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Copy Text ala GitHub</title>
+    <style>
+      body {
+        background: #0d1117;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        padding: 40px;
+        color: #c9d1d9;
+      }
+
+      .code-container {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 800px;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        background: #21262d;
+        color: #c9d1d9;
+        border: 1px solid #30363d;
+        padding: 4px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .copy-btn:hover {
+        background: #30363d;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .penutup {
+        text-align: center;
+      }
+
+      pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DEBIAN WEB Server</h1>
+    <h2>Perintah:</h2>
+    <p>apt install apache2</p>
+    <p>cd /var/www/html/</p>
+    <p>mkidr web1</p>
+    <p>mkdir web2</p>
+    <p>nano web1/index.html</p>
+
+    <!-- isi web 1-->
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>index.html</span>
+        <button class="copy-btn" onclick="copyIsiWeb1()">Copy</button>
+      </div>
+
+      <textarea id="isiweb1" readonly>
+ 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi TKJ – Coquette Learning</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pink:#f3b6c6;
+      --pink-soft:#fde6ec;
+      --pink-dark:#d97a95;
+      --cream:#fff9fb;
+      --text:#3a3a3a;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+
+    body{
+      background:linear-gradient(135deg,var(--pink-soft),var(--cream));
+      color:var(--text);
+    }
+
+    header{
+      text-align:center;
+      padding:2.5rem 1rem;
+      background:var(--cream);
+      border-bottom:4px solid var(--pink);
+    }
+
+    header h1{
+      font-family:'Playfair Display',serif;
+      color:var(--pink-dark);
+      font-size:2.6rem;
+    }
+
+    header p{opacity:.8;margin-top:.5rem}
+
+    nav{
+      background:var(--pink);
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      padding:1rem;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:.4rem 1.2rem;
+      border-radius:20px;
+      transition:.3s;
+    }
+
+    nav a:hover{background:#fff;color:var(--pink-dark)}
+
+    main{
+      max-width:1100px;
+      margin:auto;
+      padding:2rem 1rem;
+    }
+
+    section{
+      background:#fff;
+      border-radius:22px;
+      padding:2rem;
+      margin-bottom:2rem;
+      box-shadow:0 15px 30px rgba(0,0,0,.08);
+      border:2px dashed var(--pink-soft);
+    }
+
+    section h2{
+      font-family:'Playfair Display',serif;
+      color:var(--pink-dark);
+      margin-bottom:1rem;
+    }
+
+    section p{
+      line-height:1.8;
+      font-size:.95rem;
+      margin-bottom:1rem;
+    }
+
+    ul{
+      margin-left:1.2rem;
+      line-height:1.8;
+    }
+
+    footer{
+      text-align:center;
+      padding:1.5rem;
+      background:var(--cream);
+      border-top:3px solid var(--pink);
+      font-size:.85rem;
+    }
+
+    footer span{color:var(--pink-dark);font-weight:600}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🎀 Materi TKJ 🎀</h1>
+  <p>Pembelajaran Teknik Komputer & Jaringan dengan desain lembut</p>
+</header>
+
+<nav>
+  <a href="#">Beranda</a>
+  <a href="#">Materi</a>
+  <a href="#">Referensi</a>
+  <a href="#">Tentang</a>
+</nav>
+
+<main>
+
+<section>
+  <h2>Dasar Jaringan Komputer</h2>
+  <p>
+    Jaringan komputer adalah sistem yang menghubungkan dua atau lebih perangkat
+    agar dapat saling bertukar data dan berbagi sumber daya.
+    Dalam dunia TKJ, jaringan menjadi fondasi utama komunikasi digital.
+  </p>
+  <p>
+    Dengan jaringan komputer, pengguna dapat berbagi file, printer, koneksi internet,
+    serta melakukan komunikasi secara real-time melalui berbagai layanan.
+  </p>
+</section>
+
+<section>
+  <h2>Perangkat Jaringan</h2>
+  <p>
+    Perangkat jaringan adalah alat yang digunakan untuk membangun dan mengelola
+    koneksi antar perangkat dalam jaringan.
+  </p>
+  <ul>
+    <li><b>Switch</b> – Menghubungkan banyak perangkat dalam satu jaringan lokal.</li>
+    <li><b>Router</b> – Menghubungkan jaringan yang berbeda dan mengatur lalu lintas data.</li>
+    <li><b>Access Point</b> – Menyediakan koneksi jaringan nirkabel (WiFi).</li>
+    <li><b>Modem</b> – Menghubungkan jaringan lokal ke jaringan internet.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>IP Address</h2>
+  <p>
+    IP Address adalah alamat unik yang dimiliki setiap perangkat dalam jaringan.
+    Alamat ini berfungsi sebagai identitas agar perangkat dapat saling mengenali.
+  </p>
+  <p>
+    Terdapat dua jenis utama IP Address:
+  </p>
+  <ul>
+    <li><b>IPv4</b> – Menggunakan format 4 blok angka (contoh: 192.168.1.1).</li>
+    <li><b>IPv6</b> – Menggunakan format heksadesimal dan kapasitas alamat lebih besar.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Subnetting</h2>
+  <p>
+    Subnetting adalah teknik membagi satu jaringan besar menjadi beberapa jaringan kecil.
+    Tujuannya untuk efisiensi penggunaan IP Address dan meningkatkan keamanan jaringan.
+  </p>
+  <p>
+    Dalam subnetting, administrator jaringan harus memahami CIDR, subnet mask,
+    serta perhitungan jumlah host yang tersedia.
+  </p>
+</section>
+
+<section>
+  <h2>Topologi Jaringan</h2>
+  <p>
+    Topologi jaringan adalah bentuk atau struktur hubungan antar perangkat dalam jaringan.
+  </p>
+  <ul>
+    <li><b>Bus</b> – Semua perangkat terhubung dalam satu jalur.</li>
+    <li><b>Star</b> – Semua perangkat terhubung ke satu pusat (switch).</li>
+    <li><b>Ring</b> – Data mengalir membentuk lingkaran.</li>
+    <li><b>Mesh</b> – Setiap perangkat saling terhubung.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Keamanan Jaringan</h2>
+  <p>
+    Keamanan jaringan bertujuan melindungi data dan sistem dari akses tidak sah.
+    Dalam TKJ, keamanan menjadi aspek penting seiring meningkatnya ancaman digital.
+  </p>
+  <p>
+    Beberapa konsep keamanan jaringan meliputi penggunaan firewall,
+    manajemen hak akses, serta monitoring lalu lintas jaringan.
+  </p>
+</section>
+
+</main>
+
+<footer>
+  © 2026 <span>TKJ Coquette Learning</span> • Materi Jaringan Tanpa Ribet 🎀
+</footer>
+
+</body>
+</html>
+
+      </textarea>
+    </div>
+
+    <script>
+      function copyIsiWeb1() {
+        const textarea = document.getElementById("isiweb1");
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(textarea.value);
+        alert("HTML berhasil di-copy!");
+      }
+    </script>
+
+    <!-- isi web2-->
+
+    <h2>web 2</h2>
+    <p>nano web2/index.html</p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>index.html</span>
+        <button class="copy-btn" onclick="copyIsiWeb2()">Copy</button>
+      </div>
+
+      <textarea id="isiweb2" readonly>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Curriculum Vitae - Fitri Octaviana</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffe1eb, #ffd1e3);
+        margin: 0;
+        padding: 50px 15px;
+        overflow-x: hidden;
+      }
+
+      /* Floating decorations */
+      .decor {
+        position: fixed;
+        font-size: 22px;
+        opacity: 0.25;
+        animation: float 12s linear infinite;
+        pointer-events: none;
+      }
+      .decor:nth-child(1) {
+        top: 10%;
+        left: 5%;
+        animation-duration: 14s;
+      }
+      .decor:nth-child(2) {
+        top: 30%;
+        right: 8%;
+        animation-duration: 18s;
+      }
+      .decor:nth-child(3) {
+        bottom: 15%;
+        left: 12%;
+        animation-duration: 16s;
+      }
+      .decor:nth-child(4) {
+        bottom: 25%;
+        right: 10%;
+        animation-duration: 20s;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-120vh);
+        }
+      }
+
+      .container {
+        position: relative;
+        max-width: 760px;
+        margin: auto;
+        background: #fff3f8;
+        border-radius: 24px;
+        padding: 35px;
+        border: 2px dashed #ff9db6;
+        box-shadow: 0 20px 45px rgba(255, 160, 190, 0.45);
+        animation: fadeIn 1.3s ease forwards;
+      }
+
+      /* Ribbon */
+      .ribbon {
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        background: #ff7aa2;
+        color: white;
+        padding: 8px 18px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 0 0 12px 0;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        letter-spacing: 4px;
+        color: #c93a6a;
+        margin-bottom: 35px;
+      }
+
+      .profile {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        animation: slideUp 1s ease forwards;
+      }
+
+      .profile img {
+        width: 140px;
+        height: 175px;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 4px solid #ff9db6;
+        box-shadow: 0 10px 22px rgba(201, 58, 106, 0.4);
+      }
+
+      .profile-info table {
+        width: 100%;
+        font-size: 14px;
+        color: #6b3f50;
+      }
+
+      .profile-info td {
+        padding: 6px 8px;
+        vertical-align: top;
+      }
+
+      .name-badge {
+        display: inline-block;
+        background: #ffd1e3;
+        padding: 4px 10px;
+        border-radius: 12px;
+        color: #c93a6a;
+        font-weight: bold;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #ff8fb1,
+          transparent
+        );
+        margin: 32px 0;
+      }
+
+      .section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        color: #c93a6a;
+        margin-bottom: 12px;
+      }
+
+      .section h2::after {
+        content: " ♡";
+        color: #ff7aa2;
+      }
+
+      .section ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: 14px;
+        color: #6b3f50;
+      }
+
+      .section ul li {
+        padding: 6px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .section ul li::before {
+        content: "✿";
+        position: absolute;
+        left: 0;
+        color: #ff6f9c;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(35px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .profile {
+          flex-direction: column-reverse;
+          align-items: flex-start;
+        }
+
+        .profile img {
+          width: 120px;
+          height: 150px;
+          margin-bottom: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Floating decor -->
+    <div class="decor">🎀</div>
+    <div class="decor">🌸</div>
+    <div class="decor">♡</div>
+    <div class="decor">✿</div>
+
+    <div class="container">
+      <div class="ribbon">CV</div>
+
+      <h1>CURRICULUM VITAE</h1>
+
+      <div class="profile">
+        <div class="profile-info">
+          <table>
+            <tr>
+              <td>Nama</td>
+              <td>:</td>
+              <td><span class="name-badge">FITRI OCTAVIANA LESTARI</span></td>
+            </tr>
+            <tr>
+              <td>Tempat, Tgl Lahir</td>
+              <td>:</td>
+              <td>Blitar, 18 Oktober 2007</td>
+            </tr>
+            <tr>
+              <td>Jenis Kelamin</td>
+              <td>:</td>
+              <td>Perempuan</td>
+            </tr>
+            <tr>
+              <td>Agama</td>
+              <td>:</td>
+              <td>Islam</td>
+            </tr>
+            <tr>
+              <td>Kewarganegaraan</td>
+              <td>:</td>
+              <td>Indonesia</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>:</td>
+              <td>Belum Kawin</td>
+            </tr>
+            <tr>
+              <td>Alamat</td>
+              <td>:</td>
+              <td>
+                Dusun Banjarjo RT 03 RW 01,<br />
+                Desa Slorok, Kec. Doko, Kab. Blitar
+              </td>
+            </tr>
+            <tr>
+              <td>Telepon</td>
+              <td>:</td>
+              <td>+62 857-8547-xxxx</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>:</td>
+              <td>fitrioctaviana**@gmail.com</td>
+            </tr>
+          </table>
+        </div>
+
+        <img
+          src="https://www.dropbox.com/scl/fi/uhw8z6wlk9parykv0wsz2/449780903_330880763294713_1049621143657320235_n.jpg?rlkey=da1oktuzo4doutr3wxc56u0bp&st&raw=1"
+          alt="Foto Profil"
+        />
+      </div>
+
+      <hr />
+
+      <div class="section">
+        <h2>Pendidikan</h2>
+        <ul>
+          <li>2012 – 2013 TK Al-Hidayah</li>
+          <li>2013 – 2019 SDN Slorok 01</li>
+          <li>2019 – 2023 SMP Negeri 2 Doko</li>
+          <li>2023 – 2026 SMK Negeri 1 Doko</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div class="section">
+        <h2>Kemampuan</h2>
+        <ul>
+          <li>Menulis rapi</li>
+          <li>Menggambar</li>
+          <li>Memasak</li>
+          <li>Menggunakan internet</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div class="section">
+        <h2>Pengalaman Kerja</h2>
+        <ul>
+          <li>Belum memiliki pengalaman kerja</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+      </textarea>
+    </div>
+
+    <script>
+      function copyIsiWeb2() {
+        const textarea = document.getElementById("isiweb2");
+        textarea.select();
+        textarea.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(textarea.value);
+        alert("HTML berhasil di-copy!");
+      }
+    </script>
+
+    <!--sudah di sites available-->
+
+    <h2>Step 1</h2>
+    <p>cd /etc/apache2/sites-available</p>
+    <p>mv 000-default.conf backup</p>
+    <p>cp backup web1.conf</p>
+    <p>cp backup web2.conf</p>
+    <p>nano web1.conf</p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>web1.conf</span>
+        <button class="copy-btn" onclick="copyTextweb1()">Copy</button>
+      </div>
+      <pre id="web1">
+<VirtualHost *:80>
+        ServerName fitri.internal
+        ServerAlias fitrioctavianalestari.my.id
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/web1
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+
+      </pre>
+    </div>
+
+    <script>
+      function copyTextweb1() {
+        const text = document.getElementById("web1").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+    <h2>Step 2</h2>
+    <p>nano web2</p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>web2.conf</span>
+        <button class="copy-btn" onclick="copyTextweb2()">Copy</button>
+      </div>
+      <pre id="web2">
+<VirtualHost *:80>
+        ServerName biodata.fitri.internal
+        ServerAlias biodata.fitrioctavianalestari.my.id
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/web2
+
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+
+
+      </pre>
+    </div>
+
+    <script>
+      function copyTextweb2() {
+        const text = document.getElementById("web2").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+    <h2>Step 3</h2>
+    <p>a2ensite web1.conf</p>
+    <p>a2ensite web2.conf</p>
+
+    <h2>Perintah Restart:</h2>
+    <p></p>
+    <p>systemctl reload apache2</p>
+    <p>service apache2 status</p>
+    <div class="notes">
+      <h2>Notes:</h2>
+      <h3>langsung cek saja. pasti bisa</h3>
+    </div>
+    <div class="penutup">
+      <p></p>
+      <p>By Mlnoxid</p>
+    </div>
+  </body>
+</html>

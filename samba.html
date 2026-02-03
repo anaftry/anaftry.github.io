@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Copy Text ala GitHub</title>
+    <style>
+      body {
+        background: #0d1117;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        padding: 40px;
+        color: #c9d1d9;
+      }
+
+      .code-container {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 800px;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        background: #21262d;
+        color: #c9d1d9;
+        border: 1px solid #30363d;
+        padding: 4px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .copy-btn:hover {
+        background: #30363d;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .penutup {
+        text-align: center;
+      }
+
+      pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DEBIAN SAMBA SERVER</h1>
+    <h2>Perintah:</h2>
+    <p>apt install samba</p>
+    <p>mkdir -p /home/samba/guru</p>
+    <p>mkdir -p /home/samba/public</p>
+    <p>groupadd guru</p>
+    <p>useradd -m -s /bin/bash guru1</p>
+    <p>passwd guru1</p>
+    <p>usermod -aG guru guru1</p>
+    <p>chown -R root:guru /home/samba/guru</p>
+    <p>chmod -R 2770 /home/samba/guru</p>
+    <p>chmod -R 0777 /home/samba/public</p>
+    <p>smbpasswd -a guru1</p>
+    <p>nano /etc/samba/smb.conf</p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>smb.conf</span>
+        <button class="copy-btn" onclick="copyText()">Copy</button>
+      </div>
+      <pre id="smb.conf">
+[guru]
+path = /home/samba/guru
+browseable = yes
+writable = yes
+valid users = @guru
+create mask = 0660
+directory mask = 2770
+
+[public]
+path = /home/samba/public
+browseable = yes
+writable = yes
+read only = no
+guest ok = yes
+
+      </pre>
+    </div>
+
+    <script>
+      function copyText() {
+        const text = document.getElementById("smb.conf").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+    <h2>Perintah Restart:</h2>
+    <p></p>
+    <p>service samba restart</p>
+    <p>service samba status</p>
+    <div class="notes">
+      <h2>Notes:</h2>
+      <h3>jika sudah berjala silahkan test saja dengan user guru1</h3>
+    </div>
+    <div class="penutup">
+      <p></p>
+      <p>By Mlnoxid</p>
+    </div>
+  </body>
+</html>

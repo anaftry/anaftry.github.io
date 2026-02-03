@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Copy Text ala GitHub</title>
+    <style>
+      body {
+        background: #0d1117;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        padding: 40px;
+        color: #c9d1d9;
+      }
+
+      .code-container {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 800px;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        background: #21262d;
+        color: #c9d1d9;
+        border: 1px solid #30363d;
+        padding: 4px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .copy-btn:hover {
+        background: #30363d;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .penutup {
+        text-align: center;
+      }
+
+      pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DEBIAN NETWORKING</h1>
+    <h2>Perintah:</h2>
+    <p>nano /etc/network/interfaces</p>
+    <p></p>
+    <p></p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>interfaces</span>
+        <button class="copy-btn" onclick="copyTextiface()">Copy</button>
+      </div>
+      <pre id="interfaces">
+auto enp0s3
+iface enp0s3 inet static
+        address 10.0.40.238/28
+        gateway 10.0.40.225
+
+
+      </pre>
+    </div>
+
+    <script>
+      function copyTextiface() {
+        const text = document.getElementById("interfaces").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+    <h2>Step 2</h2>
+    <p>nano /etc/resolv.conf</p>
+    <div class="code-container">
+      <div class="code-header">
+        <span>resolv.conf</span>
+        <button class="copy-btn" onclick="copyTextsv()">Copy</button>
+      </div>
+      <pre id="resolv">
+nameserver 8.8.8.8
+nameserver 1.1.1.1
+
+      </pre>
+    </div>
+
+    <script>
+      function copyTextsv() {
+        const text = document.getElementById("resolv").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+    <h2>Perintah Restart:</h2>
+    <p></p>
+    <p>service networking restart</p>
+    <p>ip a</p>
+    <p>ping 8.8.8.8</p>
+    <p>ping google.com</p>
+    <div class="notes">
+      <h2>Notes:</h2>
+      <h3>jika ping sudah ttl berarti aman yak..</h3>
+    </div>
+    <div class="penutup">
+      <p></p>
+      <p>By Mlnoxid</p>
+    </div>
+  </body>
+</html>

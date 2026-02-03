@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Copy Text ala GitHub</title>
+    <style>
+      body {
+        background: #0d1117;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        padding: 40px;
+        color: #c9d1d9;
+      }
+
+      .code-container {
+        background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 800px;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        font-size: 14px;
+      }
+
+      .copy-btn {
+        background: #21262d;
+        color: #c9d1d9;
+        border: 1px solid #30363d;
+        padding: 4px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .copy-btn:hover {
+        background: #30363d;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .penutup {
+        text-align: center;
+      }
+
+      pre {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DEBIAN DHCP SERVER</h1>
+    <h2>Perintah:</h2>
+    <p>apt install isc-dhcp-server</p>
+    <p>nano /etc/dhcp/dhcpd.conf</p>
+    <p></p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>dhcpd.conf</span>
+        <button class="copy-btn" onclick="copyText()">Copy</button>
+      </div>
+      <pre id="code">
+authoritative;
+#VLAN 10
+subnet 10.0.10.128 netmask 255.255.255.128 {
+  range 10.0.10.130 10.0.10.254;
+  option domain-name-servers 10.0.40.238;
+  option domain-name "fitri.internal";
+  option routers 10.0.10.129;
+  option broadcast-address 10.0.10.255;
+  default-lease-time 600;
+  max-lease-time 7200;
+}
+
+#VLAN 20
+subnet 10.0.20.192 netmask 255.255.255.192 {
+  range 10.0.20.193 10.0.20.253;
+  option domain-name-servers 10.0.40.238;
+  option domain-name "fitri.internal";
+  option routers 10.0.20.254;
+  option broadcast-address 10.0.20.255;
+  default-lease-time 600;
+  max-lease-time 7200;
+}
+
+#VLAN 30
+subnet 10.0.30.192 netmask 255.255.255.224 {
+  range 10.0.30.193 10.0.30.221;
+  option domain-name-servers 10.0.40.238;
+  option domain-name "fitri.internal";
+  option routers 10.0.30.222;
+  option broadcast-address 10.0.30.223;
+  default-lease-time 600;
+  max-lease-time 7200;
+}
+
+#VLAN 40 STATIC TANPA RANGE
+subnet 10.0.40.224 netmask 255.255.255.240 {
+  option routers 10.0.40.225;
+}
+
+  </pre
+      >
+    </div>
+
+    <script>
+      function copyText() {
+        const text = document.getElementById("code").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+    <h2>Step 2</h2>
+    <p>nano /etc/default/isc-dhcp-server</p>
+
+    <div class="code-container">
+      <div class="code-header">
+        <span>isc-dhcp-server</span>
+        <button class="copy-btn" onclick="copyTextdefault()">Copy</button>
+      </div>
+      <pre id="isc-dhcp-server">
+
+INTERFACESv4="enp0s3"
+
+      </pre>
+    </div>
+
+    <script>
+      function copyTextdefault() {
+        const text = document.getElementById("isc-dhcp-server").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Text berhasil di-copy!");
+        });
+      }
+    </script>
+
+    <h2>Perintah Restart:</h2>
+    <p></p>
+    <p>service isc-dhcp-server restart</p>
+    <p>service isc-dhcp-server status</p>
+    <div class="notes">
+      <h2>Notes:</h2>
+      <h3>
+        Jika dhcp server sudah berjalan abaikan dulu setting dns dulu karena
+        domain-name-servers nya kita setting langsung pake ip debian dan
+        fitri.internal tidak 8.8.8.8
+      </h3>
+    </div>
+    <div class="penutup">
+      <p></p>
+      <p>By Mlnoxid</p>
+    </div>
+  </body>
+</html>
