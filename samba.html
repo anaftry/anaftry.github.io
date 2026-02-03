@@ -70,14 +70,14 @@
     <h2>Perintah:</h2>
     <p>apt install samba</p>
     <p>mkdir -p /home/samba/guru</p>
-    <p>mkdir -p /home/samba/public</p>
+    <p>mkdir -p /home/samba/siswa</p>
     <p>groupadd guru</p>
     <p>useradd -m -s /bin/bash guru1</p>
     <p>passwd guru1</p>
     <p>usermod -aG guru guru1</p>
     <p>chown -R root:guru /home/samba/guru</p>
     <p>chmod -R 2770 /home/samba/guru</p>
-    <p>chmod -R 0777 /home/samba/public</p>
+    <p>chmod -R 0777 /home/samba/siswa</p>
     <p>smbpasswd -a guru1</p>
     <p>nano /etc/samba/smb.conf</p>
 
@@ -96,7 +96,7 @@ create mask = 0660
 directory mask = 2770
 
 [public]
-path = /home/samba/public
+path = /home/samba/siswa
 browseable = yes
 writable = yes
 read only = no
@@ -127,3 +127,4 @@ guest ok = yes
     </div>
   </body>
 </html>
+
